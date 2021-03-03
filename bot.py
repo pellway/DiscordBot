@@ -92,4 +92,4 @@ async def on_message(message):
         await message.channel.send(copypasta[0])
 
 
-client.run('ODE0NzExNzA4MDI2OTI5MTkz.YDh1Zw.VMZwZOoSAjNn5FZDPIftpASBttA')
+client.run('token')
