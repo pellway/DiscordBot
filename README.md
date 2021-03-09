@@ -7,4 +7,3 @@ A small Python discord bot for various utilities. Coded mainly for use in privat
 * $rps [action] - Play Rock Paper Scissors! Replace [action] with either rock, paper or scissors.
 * $pokemon - Shows a countdown for the Pokemon remakes.
 * $uwu - Returns a random uwu image.
-* $copypasta - I dont need to describe this one.
