@@ -3,8 +3,7 @@
 import discord
 import os
 import random
-from datetime import datetime
-from datetime import date
+from datetime import datetime, date
 client = discord.Client()
 random.seed(datetime.now())
 
@@ -23,8 +22,7 @@ async def on_message(message):
         rpsHelp = '__**$rps [action]**__\nPlay Rock Paper Scissors! Replace [action] with either rock, paper or scissors.\n'
         pokemonHelp = '__**$pokemon**__\nShows a countdown for the Pokemon remakes.\n'
         uwuHelp = '__**$uwu**__\nReturns a random uwu image.\n'
-        copypastaHelp = '__**$copypasta**__\nI dont need to describe this one.\n'
-        await message.channel.send(rollHelp + factHelp + rpsHelp + pokemonHelp + uwuHelp + copypastaHelp)
+        await message.channel.send(rollHelp + factHelp + rpsHelp + pokemonHelp + uwuHelp)
 
     if message.content.startswith('$roll'):
         arr = str.split(message.content)
@@ -83,13 +81,7 @@ async def on_message(message):
         randImage = imageList[random.randint(0,len(imageList)-1)]
         print(randImage)
         await message.channel.send(file=discord.File("Images/"+randImage))
-    
 
-    if message.content.startswith('$copypasta'):
-        filename = 'copypasta.txt'
-        with open(filename) as f:
-            copypasta = f.readlines()
-        await message.channel.send(copypasta[0])
-
-
-client.run('token')
+tokenFile = open('token.txt', 'r')
+token = tokenFile.readline()
+client.run(token)
